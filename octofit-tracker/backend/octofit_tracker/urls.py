@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+import os
+from django.http import JsonResponse
 from rest_framework import routers
 from .views import UserViewSet, TeamViewSet, ActivityViewSet, LeaderboardViewSet, WorkoutViewSet
 from rest_framework.response import Response
@@ -28,16 +30,16 @@ router.register(r'leaderboard', LeaderboardViewSet)
 router.register(r'workouts', WorkoutViewSet)
 
 @api_view(['GET'])
-def api_root(request, format=None):
-    return Response({
-        'users': request.build_absolute_uri('/users/'),
-        'teams': request.build_absolute_uri('/teams/'),
-        'activities': request.build_absolute_uri('/activities/'),
-        'leaderboard': request.build_absolute_uri('/leaderboard/'),
-        'workouts': request.build_absolute_uri('/workouts/'),
+def api_root(request):
+    codespace_name = os.environ.get('CODESPACE_NAME', 'localhost')
+    base_url = f"https://{codespace_name}-8000.app.github.dev" if codespace_name != 'localhost' else "http://localhost:8000"
+    return JsonResponse({
+        "activities": f"{base_url}/api/activities/",
+        "teams": f"{base_url}/api/teams/",
+        "users": f"{base_url}/api/users/"
     })
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', api_root, name='api-root'),
+    path('', api_root),
     path('', include(router.urls)),
 ]
