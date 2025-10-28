@@ -1,0 +1,118 @@
+
+.App {
+  text-align: center;
+  background: linear-gradient(135deg, #f8fafc 0%, #e3f0ff 100%);
+  min-height: 100vh;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+
+.App-header {
+  background-color: #1e293b;
+  color: #fbbf24;
+}
+
+
+.App-link {
+  color: #2563eb;
+  font-weight: bold;
+  text-decoration: underline;
+}
+/* Custom table styles */
+table.table {
+  background-color: #f1f5f9;
+  color: #334155;
+  border-radius: 8px;
+  overflow: hidden;
+}
+thead.table-dark {
+  background-color: #2563eb !important;
+  color: #fff;
+}
+tbody tr {
+  background-color: #e0e7ff;
+}
+tbody tr:nth-child(even) {
+  background-color: #c7d2fe;
+}
+th, td {
+  border: 1px solid #64748b !important;
+}
+
+/* Custom button styles */
+.btn-primary {
+  background-color: #2563eb;
+  border-color: #2563eb;
+}
+.btn-success {
+  background-color: #22c55e;
+  border-color: #22c55e;
+}
+.btn-secondary {
+  background-color: #64748b;
+  border-color: #64748b;
+}
+.btn {
+  color: #fff;
+  font-weight: 500;
+}
+
+/* Custom heading styles */
+.display-4, .h1, .h2, .h3, .h4, .h5 {
+  color: #2563eb;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Custom navigation styles */
+.navbar {
+  background: linear-gradient(90deg, #2563eb 0%, #1e293b 100%) !important;
+  box-shadow: 0 2px 8px rgba(37,99,235,0.1);
+}
+.navbar-brand {
+  color: #fbbf24 !important;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.nav-link {
+  color: #fff !important;
+  font-weight: 500;
+}
+.nav-link.active, .nav-link:focus, .nav-link:hover {
+  color: #fbbf24 !important;
+}
+
+/* Card styles */
+.card {
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(37,99,235,0.08);
+}
+.card-title {
+  color: #2563eb;
+}
+
+/* Modal styles */
+.modal-content {
+  border-radius: 12px;
+}
+.modal-title {
+  color: #2563eb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
