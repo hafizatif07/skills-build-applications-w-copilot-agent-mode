@@ -36,7 +36,9 @@ def api_root(request):
     return JsonResponse({
         "activities": f"{base_url}/api/activities/",
         "teams": f"{base_url}/api/teams/",
-        "users": f"{base_url}/api/users/"
+        "users": f"{base_url}/api/users/",
+        "leaderboard": f"{base_url}/api/leaderboard/",
+        "workouts": f"{base_url}/api/workouts/"
     })
 urlpatterns = [
     path('admin/', admin.site.urls),
