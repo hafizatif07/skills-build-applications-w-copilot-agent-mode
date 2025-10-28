@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from 'react';
 
-const API_URL = `${window.location.hostname.includes('app.github.dev') ? `https://${window.location.hostname.replace('-3000', '-8000')}/api/users/` : '/api/users/'}`;
+import React, { useEffect, useState } from 'react';
 
 export default function Users() {
   const [users, setUsers] = useState([]);
   useEffect(() => {
-    fetch(API_URL)
+    fetch('https://-8000.app.github.dev/api/users')
       .then(res => res.json())
       .then(data => setUsers(data));
   }, []);

@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from 'react';
 
-const API_URL = `${window.location.hostname.includes('app.github.dev') ? `https://${window.location.hostname.replace('-3000', '-8000')}/api/teams/` : '/api/teams/'}`;
+import React, { useEffect, useState } from 'react';
 
 export default function Teams() {
   const [teams, setTeams] = useState([]);
   useEffect(() => {
-    fetch(API_URL)
+    fetch('https://-8000.app.github.dev/api/teams')
       .then(res => res.json())
       .then(data => setTeams(data));
   }, []);

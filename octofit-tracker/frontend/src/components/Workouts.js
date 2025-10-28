@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from 'react';
 
-const API_URL = `${window.location.hostname.includes('app.github.dev') ? `https://${window.location.hostname.replace('-3000', '-8000')}/api/workouts/` : '/api/workouts/'}`;
+import React, { useEffect, useState } from 'react';
 
 export default function Workouts() {
   const [workouts, setWorkouts] = useState([]);
   useEffect(() => {
-    fetch(API_URL)
+    fetch('https://-8000.app.github.dev/api/workouts')
       .then(res => res.json())
       .then(data => setWorkouts(data));
   }, []);
